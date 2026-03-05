@@ -3,7 +3,7 @@
 message(STATUS "cmake config ${CMAKE_CURRENT_SOURCE_DIR}")
 
 #Set target name
-set(target helloworld_demos)
+set(target helloworld_demo)
 
 #Add target file to application library list
 add_apps_libraries($<TARGET_FILE:${target}>)
