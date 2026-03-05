@@ -3,7 +3,7 @@
 message(STATUS "cmake config ${CMAKE_CURRENT_SOURCE_DIR}")
 
 #Set target name
-set(target hello_world)
+set(target helloworld_demos)
 
 #Add target file to application library list
 add_apps_libraries($<TARGET_FILE:${target}>)
@@ -12,7 +12,7 @@ add_apps_libraries($<TARGET_FILE:${target}>)
 add_library(${target} STATIC)
 
 #Set the archive output directory for the target
-set_target_properties(${target} PROPERTIES ARCHIVE_OUTPUT_DIRECTORY ${out_quec_lib_dir})
+set_target_properties(${target} PROPERTIES ARCHIVE_OUTPUT_DIRECTORY ${out_unir_lib_dir})
 
 #Add private include directories
 target_include_directories(${target} PRIVATE
