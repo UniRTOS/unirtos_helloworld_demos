@@ -1,0 +1,15 @@
+{
+  "name": "helloworld_demos",
+  "type": "demo",
+  "platforms": [
+    "all"
+  ],
+  "depend_config": "depend.config",
+  "entries": [
+    {
+      "order": 130,
+      "entry_name": "unir_hello_world_demo",
+      "function": "unir_hello_world_init"
+    }
+  ]
+}
