@@ -7,7 +7,7 @@
   "depend_config": "depend.config",
   "entries": [
     {
-      "order": 130,
+      "order": 700,
       "entry_name": "unir_hello_world_demo",
       "function": "unir_hello_world_init"
     }

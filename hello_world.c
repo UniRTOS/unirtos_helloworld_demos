@@ -8,6 +8,8 @@
 //Define log information
 #define QOS_LOG_TAG   LOG_TAG_DEMO
 
+#include "unirtos_app_init_registry.h"
+
 //Define stack size of hello world task as 1024 bytes
 #define UNIR_HELLO_WORLD_DEMO_TASK_STACK_SIZE 1024
 //Define hello world task priority as normal
@@ -50,3 +52,4 @@ void unir_hello_world_init(void)
             QOSA_NULL);                                   //Task parameter
     }
 }
+UNIRTOS_APP_EXPORT(700, "unir_hello_world_demo", unir_hello_world_init);
