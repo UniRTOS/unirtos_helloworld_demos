@@ -1,21 +1,12 @@
 # Hello World Demo
 
-## 中文
-
-### 项目概述
+## 概述
 
 Hello World Demo 是一个基于 UNIRTOS 的入门级示例项目。该项目演示了如何在 UNIRTOS 平台上创建、初始化和运行一个简单的任务。通过此示例，开发者可以快速了解 UNIRTOS 的基本开发流程和 API 使用方法。
 
 **适用平台**：所有支持 UNIRTOS 的平台
 
-### 功能特性
-
-- 🚀 **简单易懂**：代码逻辑清晰，适合初学者快速上手
-- 📝 **任务演示**：展示如何创建和管理 UNIRTOS 任务
-- ⏱️ **定时输出**：每隔 1 秒输出一条日志，演示任务周期性执行
-- 🔍 **日志系统**：集成 QOSA 日志系统，便于调试和监控
-
-### 快速上手
+## 快速上手
 
 ### 1. 开发环境搭建
 
@@ -41,7 +32,7 @@ helloworld_demos/
 #### 5. 构建项目
 unirtos 目录下运行以下命令进行构建：
 ```bash
-unirtos make EG800ZCN_LA EG800ZCNLAR01A01M04_BETA_OCPU_20260511 app new
+unirtos make EG800ZCN_LA EG800ZCNLAR01A01M04_BETA_OCPU_20260511
 ```
 
 #### 6. 日志展示
@@ -58,7 +49,7 @@ unirtos make EG800ZCN_LA EG800ZCNLAR01A01M04_BETA_OCPU_20260511 app new
 
 每行输出间隔约 1 秒。
 
-### 代码概览
+## 代码概览
 
 #### 示例工作流程
 
@@ -91,11 +82,11 @@ unirtos make EG800ZCN_LA EG800ZCNLAR01A01M04_BETA_OCPU_20260511 app new
 - 循环输出日志
 - 定期睡眠
 
-### 论坛社区
+## 论坛社区
 
 https://forumschinese.quectel.com/c/66-category/66
 
-### 贡献指南
+## 贡献指南
 
 欢迎提交 Issue 和 Pull Request！
 
