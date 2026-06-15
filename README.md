@@ -71,20 +71,20 @@ unirtos make EG800ZCN_LA EG800ZCNLAR01A01M04_BETA_OCPU_20260511
 #### 主要 API 接口
 
 ##### unir_hello_world_init
-任务初始化函数  
+任务初始化函数
 - 检查任务是否已创建
 - 创建任务，设置堆栈大小和优先级
 - 设置任务名称和入口函数
 
 ##### unir_hello_world_demo_process
-任务处理函数  
+任务处理函数
 - 维护计数器
 - 循环输出日志
 - 定期睡眠
 
 ## 论坛社区
 
-https://forumschinese.quectel.com/c/66-category/66
+[点此进入](https://forumschinese.quectel.com/c/66-category/66)
 
 ## 贡献指南
 
