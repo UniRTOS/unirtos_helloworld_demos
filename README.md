@@ -1,93 +1,80 @@
-# Hello World Demo
+# unirtos_helloworld_demos
 
-## 概述
+本仓库推荐通过 `unirtos-cli` 的 demo 工作流使用，以保证创建、环境拉取和编译流程一致。
 
-Hello World Demo 是一个基于 UNIRTOS 的入门级示例项目。该项目演示了如何在 UNIRTOS 平台上创建、初始化和运行一个简单的任务。通过此示例，开发者可以快速了解 UNIRTOS 的基本开发流程和 API 使用方法。
+## 功能描述
 
-**适用平台**：所有支持 UNIRTOS 的平台
+本 Demo 展示 UniRTOS 最小应用的创建与运行流程，适合作为入门样例。
+
+- 创建并启动基础任务
+- 周期输出日志，便于验证系统调度与串口日志链路
+- 可作为新项目模板，快速扩展业务逻辑
 
 ## 快速上手
 
-### 1. 开发环境搭建
+### 1. 安装 UniRTOS 工具链
 
-参考 [UNIRTOS 快速入门](https://docs.quectel.com/zh/UniRTOS/UniRTOS%E6%96%87%E6%A1%A3/%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B/%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B.html) 文档，了解如何搭建开发环境,了解开发过程。
+- [开发准备](https://www.quectel.com.cn/unirtos/docs?docs_page=快速上手/开发准备/开发准备.html)
+- [安装交叉编译工具链](https://www.quectel.com.cn/unirtos/docs?docs_page=快速上手/环境搭建/环境搭建.html)
+- [安装 Python3](https://www.python.org/downloads/)
+- [安装 git](https://git-scm.com)
+- 安装 `unirtos-cli`：`pip install unirtos-cli`
 
-#### 2. 获取项目
-进入unirtos/qos_applications目录下执行以下命令下载项目：
+以上工具安装完成后，确认以下命令可用：
+
 ```bash
-git clone https://github.com/UniRTOS/unirtos_helloworld_demos.git
+python --version # Python3
+git --version
+unirtos --version # 1.0.5 及以上版本
+unirtos-cli version # 1.0.8 及以上版本
 ```
 
-#### 4. 项目结构
+### 2. 使用 unirtos-cli 拉取 demo
 
-```
-helloworld_demos/
-├── CMakeLists.txt           # CMake 构建配置
-├── demo.manifest.json       # 应用清单文件
-├── README.md               # 本文件
-├── hello_world.c           # 源代码
-└── depend.config           # 依赖配置
-```
+先查看可用 demo 与版本：
 
-#### 5. 构建项目
-unirtos 目录下运行以下命令进行构建：
 ```bash
-unirtos make EG800ZCN_LA EG800ZCNLAR01A01M04_BETA_OCPU_20260511
+unirtos-cli ls-demos
 ```
 
-#### 6. 日志展示
+创建本 demo 工程：
 
-成功运行后，您会在串口看到以下日志输出：
-
-```
-[V/DEMO] hello world count=0
-[V/DEMO] hello world count=1
-[V/DEMO] hello world count=2
-[V/DEMO] hello world count=3
-...
+```bash
+unirtos-cli new -r unirtos_helloworld_demos
 ```
 
-每行输出间隔约 1 秒。
+如需指定版本：
 
-## 代码概览
-
-#### 示例工作流程
-
-```
-程序启动
-    ↓
-调用 unir_hello_world_init()
-    ↓
-创建名为 "unir_hello_world_demo" 的任务
-    ↓
-进入任务主函数 unir_hello_world_demo_process()
-    ↓
-无限循环：
-  ├─ 输出当前计数值
-  ├─ 睡眠 1 秒
-  └─ 计数器 +1
+```bash
+unirtos-cli new -r unirtos_helloworld_demos -v 1.0.0
 ```
 
-#### 主要 API 接口
+### 3. 进入工程并编译
 
-##### unir_hello_world_init
-任务初始化函数
-- 检查任务是否已创建
-- 创建任务，设置堆栈大小和优先级
-- 设置任务名称和入口函数
+```bash
+cd unirtos_helloworld_demos-1.0.0
+unirtos-cli env-setup
+unirtos-cli build
+```
 
-##### unir_hello_world_demo_process
-任务处理函数
-- 维护计数器
-- 循环输出日志
-- 定期睡眠
+## 常用命令
 
-## 论坛社区
+```bash
+# 打开 SDK 菜单配置
+unirtos-cli menuconfig
 
-[点此进入](https://forumschinese.quectel.com/c/66-category/66)
+# 清理构建产物
+unirtos-cli clean
+```
+
+## 技术社区
+
+技术社区：https://forumschinese.quectel.com/c/66-category/66
 
 ## 贡献指南
 
-欢迎提交 Issue 和 Pull Request！
-
-
+欢迎参与共建，建议按以下方式提交：
+- 提交前先执行一次基础验证：env-setup、build、clean。
+- 使用清晰的提交说明，描述改动目的、影响范围和验证结果。
+- 新增功能或行为变化时，同步更新 README 与相关文档。
+- 通过 Issue 或 Pull Request 提交问题修复与功能改进。
